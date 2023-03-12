@@ -1,0 +1,72 @@
+
+.main-div{
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    
+}
+.child-div{
+    margin-top: 150px;
+
+}
+
+.input-text{
+    padding: 10px;
+    width: 250px;
+ 
+    outline: none;
+    position: relative;
+    
+}
+ ::placeholder{
+     text-transform: uppercase;
+ }
+
+.add-btn{
+    cursor: pointer;
+    position: absolute;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+.add-btn:hover{
+    color: aqua;
+}
+.eachItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 270px;
+    height: 40px;
+    margin-top: 15px;
+}
+.eachItem:hover{
+    background-color: blueviolet;
+}
+.del-btn{
+   color: red;
+   
+    cursor: pointer;
+    /* margin-top: 10px; */
+    
+    font-size: 25px;
+}
+.heading{
+    padding-right: 140px;
+    color: brown;
+}
+.remove{
+    padding: 12px 50px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+}
+.remove:hover{
+    background-color: blueviolet;
+    color: white;
+}
