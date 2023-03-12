@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../components/Todolist.css'
 import todoicon from '../images/icons8-todo-list-64.png'
 import victory from '../images/peace.png'
 
+const getLocalItems=()=>{
+    let list=localStorage.getItem('lists');
+
+    if(list)
+    {
+        return JSON.parse( localStorage.getItem('lists'));
+    }
+    else{
+        return [];
+    }
+}
+
+
 const TodoList = () => {
     const[inputData,setInputData]=useState('');
-    const[items,setItems]=useState([]);
+    const[items,setItems]=useState(getLocalItems());
     const addItem=()=>{
         if(!inputData)
         {
@@ -23,6 +36,16 @@ alert("Please fill the data")
         setItems(updatedData)
 
     }
+
+    const removeAll=()=>{
+        setItems([])
+    }
+
+    // add data to localstorage
+
+    useEffect(()=>{
+localStorage.setItem("lists",JSON.stringify(items) );
+    },[items])
     return (
         <>
             <div className='main-div'>
@@ -56,7 +79,7 @@ alert("Please fill the data")
 
                     </div> 
                     <div className='clearItems'>
-                  <button className="remove"><span> Remove ALL</span></button>
+                  <button onClick={removeAll} className="remove"><span> Remove ALL</span></button>
                     </div>
                 </div>
 
